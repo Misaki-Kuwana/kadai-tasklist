@@ -14,8 +14,8 @@ class DropColumnTitleTasksTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            //
             $table->dropColumn('title');
+        });
     }
 
     /**
@@ -25,6 +25,8 @@ class DropColumnTitleTasksTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('tasks', function (Blueprint $table) {
+            $table->string('title');
+        });
     }
 }
